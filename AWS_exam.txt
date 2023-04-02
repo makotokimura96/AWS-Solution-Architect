@@ -305,28 +305,40 @@
 304.A
 305.C
 306.A
-307.
-308.
-309.
-310.
-311.
-312.
-313.
-314.
-315.
-316.
-317.
-318.
-319.
-320.
-321.
-322.
-323.
-323.
-324.
-325.
-326.
-327.
-328.
-329.
-330.
+307.D
+308.BD
+309.A
+310.B
+311.C
+312.B
+313.C
+314.B
+315.D
+- AWS Shield for DDOS
+- Amazon Macie for discover and protect sensitive date
+- Amazon GuardDuty for intelligent thread discovery to protect AWS account
+- Amazon Inspector for automated security assessment. like known Vulnerability
+316.C
+317.A
+318.AD
+- CloudTrail provides event history of your AWS account activity, including actions taken
+through the AWS Management Console, AWS Command Line Interface (CLI), and AWS SDKs and APIs.
+- AWS Config provides a detailed inventory of the AWS
+resources in your account, and continuously records changes to the configurations of those resources
+319.A
+- AWS Systems Manager Session Manager provides secure and auditable instance management without the need for any inbound
+connections or open ports
+320.A
+321.D
+322.C
+323.B
+324.D
+325.A
+326.AB
+327.A
+- Send the outbound connection from EC2 to Network Firewall. In Network Firewall, create stateful outbound rules to
+allow certain domains for software patch download and deny all other domains.
+328.B
+329.D
+330.A
+331.A
