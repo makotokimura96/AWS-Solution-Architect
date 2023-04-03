@@ -363,13 +363,15 @@ allow certain domains for software patch download and deny all other domains.
 348.B
 349.B
 350.AC
-351.
-352.
-353.
-354.
-355.
-356.
-357.
-358.
-359.
-360.
+351.D
+352.B
+Global Accelerator is a good fit for non-HTTP use cases, such as gaming (UDP), IoT (MQTT), or Voice
+over IP, as well as for HTTP use cases that specifically require static IP addresses or deterministic, fast regional failover
+353.B
+354.B
+355.D
+356.B
+357.AD
+358.C
+359.C
+360.B
