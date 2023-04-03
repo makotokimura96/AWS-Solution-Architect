@@ -342,3 +342,34 @@ allow certain domains for software patch download and deny all other domains.
 329.D
 330.A
 331.A
+332.B
+333.C
+334.A
+335.B
+336.A
+337.A
+338.D
+339.C
+340.A
+- DDoS Shield - Load Balancer, CF, Route53
+- SQL Injection WAF - Cloud Formation, ALB, API Gateway
+341.D
+342.C
+343.C
+344.A
+345.A
+346.D
+347.A
+348.B
+349.B
+350.AC
+351.
+352.
+353.
+354.
+355.
+356.
+357.
+358.
+359.
+360.
