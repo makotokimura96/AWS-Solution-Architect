@@ -28,7 +28,6 @@
 28.B
 29.C
 30.D
-418.B
 31.A
 32.B
 33.C
@@ -45,60 +44,90 @@
 44.AB
 45.BE
 46.B
-47.C
+47.C -> D
 48.D
 49.B
-50.B
-51.BC
+50.B -> D
+51.BC -> BD
 52.C
 53.C
 54.C
 55.C
 56.C
 57.B
+- Use Amazon Rekognition to detect inappropriate content.
 58.C
 59.D
 60.C
 61.C
-62.B
-63.D
+62.B -> D
+63.D -> A
 64.D
 65.C
 66.C
-67.B
-68.C
-69.A
+67.B -> D
+- Use the ChangeMessageVisibility API call to increase the visibility timeout.
+68.C -> A
+- Provision an AWS Direct Connect connection to a Region. Provision a VPN connection as a backup if the primary Direct Connect connection
+fails.
+69.A -> B
+- Configure the Auto Scaling group to use multiple Availability Zones. Configure the database as Multi-AZ. Configure an Amazon RDS Proxy
+instance for the database.
 70.C
+- Replace the NLB with an Application Load Balancer. Enable HTTP health checks by supplying the URL of the company's application.
+Configure an Auto Scaling action to replace unhealthy instances.
 71.B
 72.D
-73.BE
-74.AD
+73.BE -> CD
+- Replace the current security group of the bastion host with one that only allows inbound access from the external IP range for the company.
+- Replace the current security group of the application instances with one that allows inbound SSH access from only the private IP address of
+the bastion host
+74.AD -> AC
+- Web Server Rules: Inbound traffic from 443 (HTTPS) Source 0.0.0.0/0 - Allows inbound HTTPS access from any IPv4 address
+- Database Rules : 1433 (MS SQL)The default port to access a Microsoft SQL Server database, for example, on an Amazon RDS instance
 75.A
-76.D
+76.D -> B
+- AWS DataSync over AWS Direct Connect
 77.C
 78.B
 79.A
 80.B
 81.C
-82.C
+82.C -> B
+- Create an AWS Config rule that checks for certificates that will expire within 30 days. Configure Amazon EventBridge (Amazon CloudWatch
+Events) to invoke a custom alert by way of Amazon Simple Notification Service (Amazon SNS) when AWS Config reports a noncompliant
+resource.
 83.C
 84.B
+- Use Reserved Instances for the production EC2 instances. Use On-Demand Instances for the development and test EC2 instances.
 85.A
 86.A
-87.A
+87.A -> D
 88.A
 89.A
 90.B
 91.A
 92.AC
 93.B
-94.D
+94.D -> C
+- Configure Amazon S3 to send an event notification to an Amazon Simple Queue Service (Amazon SQS) queue. Use an AWS Lambda
+function to read from the queue and process the data. Store the resulting JSON file in Amazon DynamoDB.
 95.D
-96.D
+96.D -> C
+- If CIDR block 10.100.100.0/24, then reserved IP addresses are:
+• 10.100.100.0 – Network Address
+• 10.100.100.1 – reserved by AWS for the VPC router
+• 10.100.100.2 – reserved by AWS for mapping to Amazon-provided DNS
+• 10.100.100.3 – reserved by AWS for future use
+• 10.100.100.255 – Network Broadcast Address. AWS does not support broadcast in a VPC,
 97.D
-98.B
+98.B -> C
+- Increase the visibility timeout in the SQS queue to a value that is greater than the total of the function timeout and the batch window
+timeout.
 99.D
-100.A
+100.A -> C
+- Create an AWS Key Management Service (AWS KMS) customer managed key. Allow the EC2 role to use the KMS key for encryption
+operations. Store the encrypted data on Amazon S3.
 101.D
 102.AB
 103.B
@@ -315,7 +344,7 @@
 314.B
 315.D
 - AWS Shield for DDOS
-- Amazon Macie for discover and protect sensitive date
+- Amazon Macie for discover and protect sensitive data
 - Amazon GuardDuty for intelligent thread discovery to protect AWS account
 - Amazon Inspector for automated security assessment. like known Vulnerability
 316.C
@@ -375,3 +404,62 @@ over IP, as well as for HTTP use cases that specifically require static IP addre
 358.C
 359.C
 360.B
+361.C
+362.AE
+363.A
+364.BD
+365.C
+366.D
+367.A
+368.A
+369.A
+370.C
+371.CD
+372.B
+373.D
+374.D
+375.A
+376.A
+377.B
+378.B
+379.B
+380.D
+381.B
+382.A
+383.A
+384.C
+385.C
+386.B
+387.DE
+388.D
+389.A
+390.AD
+391.C
+392.A
+393.C
+394.B
+395.C
+396.A
+397.C
+398.C
+399.B
+400.C
+401.A
+402.A
+403.D
+404.D
+405.AE
+406.CD
+407.D
+408.B
+409.C
+410.B
+411.C
+- Amazon Aurora Serverless : a simple, cost-effective option for infrequent, intermittent, or unpredictable workloads
+412.D
+413.B
+414.C
+415.A
+416.BD
+417.C
+418.B
