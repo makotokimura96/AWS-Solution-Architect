@@ -128,26 +128,34 @@ timeout.
 100.A -> C
 - Create an AWS Key Management Service (AWS KMS) customer managed key. Allow the EC2 role to use the KMS key for encryption
 operations. Store the encrypted data on Amazon S3.
-101.D
+101.D -> A
+- NAT gateways allow private instances to initiate outbound traffic to the Internet but do not allow inbound
+traffic from the Internet to reach the private instances.
+- The solutions architect should then create a private route table for each AZ that forwards non-VPC traffic to the NAT gateway in its AZ. This
+will allow instances in the private subnets to access the Internet through the NAT gateways in the public subnets.
 102.AB
-103.B
-104.AB
+103.B -> A
+- AWS Glue tracks data that has already been processed during a previous run of an ETL job by persisting
+state information from the job run. This persisted state information is called a job bookmark. Job bookmarks help AWS Glue maintain state
+information and prevent the reprocessing of old data.
+104.AC
 105.D
 106.D
-107.D
-108.C
+107.D -> B
+108.C -> A
 109.D
 110.CD
-111.B
+111.B -> D
 112.A
 113.C
-114.D
+114.D -> C
+- Use AWS Lambda to process the photos. Store the photos in Amazon S3. Retain DynamoDB to store the metadata.
 115.D
 116.AD
-117.C
+117.C -> A
 118.D
-119.A
-120.A
+119.A -> B
+120.A -> B
 121.C
 122.B
 123.D
