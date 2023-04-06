@@ -156,50 +156,83 @@ information and prevent the reprocessing of old data.
 118.D
 119.A -> B
 120.A -> B
-121.C
+121.C -> A
 122.B
 123.D
 124.A
 125.AD
+- A NAT gateway is a Network Address Translation (NAT) service. You can use a NAT gateway so that instances in a private subnet can
+connect to services outside your VPC but external services cannot initiate a connection with those instances.
 126.B
-127.B
+127.B -> D
+- Amazon EC2 instance store for maximum performance, Amazon S3 for durable data storage, and Amazon S3 Glacier for archival storage
 128.B
 129.AE
 130.B
-131.C
-132.C
-133.B
+131.C -> D
+- Create an origin access identity (OAI). Assign the OAI to the CloudFront distribution. Configure the S3 bucket permissions so that only the
+OAI has read permission.
+132.C -> A
+133.B -> C
+- Migrate the Oracle database to Amazon RDS Custom for Oracle. Create a read replica for the database in another AWS Region.
 134.C
 135.D
-136.CD
-137.C
+- AWS PrivateLink provides private connectivity between VPCs, AWS services, and your on-premises networks, without exposing your
+traffic to the public internet.
+136.CD -> AC
+137.C -> B
+- Configure all AWS account root user email addresses as distribution lists that go to a few administrators who can respond to alerts.
+Configure AWS account alternate contacts in the AWS Organizations console or programmatically.
 138.B
-139.B
-140.AE
+139.B -> D
+- Configure S3 replication between the S3 buckets. Configure the analysis S3 bucket to send event notifications to Amazon EventBridge
+(Amazon CloudWatch Events). Configure an ObjectCreated rule in EventBridge (CloudWatch Events). Configure Lambda and SageMaker
+Pipelines as targets for the rule.
+- S3 event notification can only send notifications to SQS. SNS and Lambda, BUT not Sagamaker
+140.AE -> AC
+- EC2 instance Savings Plan saves 72% while Compute Savings Plans saves 66%. EC2 instance Savings Plans are not
+applied to Fargate or Lambda but Compute Savings Plans have.
 141.A
-142.B
-143.A
+142.B -> C
+- CloudFront improves performance for both cacheable content (such as images and videos) and dynamic content (such as API
+acceleration and dynamic site delivery).
+- Global Accelerator is a good fit for non-HTTP use cases,
+such as gaming (UDP), IoT (MQTT), or Voice over IP, as well as for HTTP use cases that specifically require static IP addresses or
+deterministic, fast regional failover.
+143.A -> D
+- Host the application on Amazon Elastic Container Service (Amazon ECS). Set up an Application Load Balancer with Amazon ECS as the
+target.
 144.B
 145.D
-146.C
-147.A
-148.C
+146.C -> B
+147.A -> B
+148.C -> D
 149.A
-150.D
-151.BC
-152.BD
+150.D -> A
+- Create Amazon CloudWatch composite alarms where possible.
+151.BC -> AC
+- Use AWS Control Tower to implement data residency guardrails to deny internet access and deny access to all AWS Regions except ap-
+northeast-3.
+- Use AWS Organizations to configure service control policies (SCPS) that prevent VPCs from gaining internet access. Deny access to all
+AWS Regions except ap-northeast-3.
+152.D
 153.D
-154.AC
-155.B
-156.BD
+154.B
+155.C
+156.AE
 157.DE
-158.D
-159.CD
+158.D -> A
+159.CD -> AC
 160.C
 161.B
 162.A
+- FSx for Lustre makes it easy and cost-effective to launch and run the popular, high-performance Lustre file system. You use Lustre for
+workloads where speed matters, such as machine learning, high performance computing (HPC), video processing, and financial modeling.
 163.A
 164.C
+- Kinesis stream save data for up to 24 hours, doesn't meet the 2 day requirement
+- Amazon SQS supports dead-letter queues (DLQ), which other queues (source queues) can target for messages that can't be processed
+(consumed) successfully.
 165.D
 166.D
 167.D
@@ -207,34 +240,52 @@ information and prevent the reprocessing of old data.
 169.C
 170.C
 171.B
-172.A
+172.A -> C
+- Field-level encryption allows you to enable your users to securely upload sensitive information to your web servers. The sensitive
+information provided by your users is encrypted at the edge, close to the user, and remains encrypted throughout your entire application
+stack.
 173.B
-174.D
+174.D -> B
 175.B
+- Amazon RDS Proxy allows applications to pool and share connections established with the database, improving database efficiency and
+application scalability.
 176.A
 177.B
+- DAX stands for DynamoDB Accelerator, and it's like a turbo boost for your DynamoDB tables. It's a fully managed, in-memory cache that
+speeds up the read and write performance of your DynamoDB tables, so you can get your data faster than ever before
 178.A
 179.A
 180.BC
-181.C
-182.A
-183.B
+181.C -> A
+182.A -> B
+183.B -> A
+- Dynamodb on-demand scales write and read capacity
+- Aurora auto scaling scales only read replicas
 184.A
-185.C
+185.C -> B
+- Create an IAM role with S3 permissions, and then specify that role as the taskRoleArn in the task definition.
 186.B
-187.BD
-188.B
-189.AD
+187.AD
+188.B -> A
+189.AD -> BD
 190.B
 191.A
 192.BE
-193.A
-194.B
+193.A -> B
+- A solutions architect must reduce the number of database reads while ensuring high availability => Use Amazon ElastiCache for Redis
+194.B -> A
+- High availability = Availability Zone
+- Disaster Recovery = Multi-Region
 195.C
-196.C
+196.C -> D
+- Extend the application to add an attribute that has a value of the current timestamp plus 30 days to each new item that is created in the
+table. Configure DynamoDB to use the attribute as the TTL attribute.
+- The DynamoDB TTL feature allows you to define a per-item timestamp to determine when an item is no longer needed. Shortly after the
+date and time of the specified timestamp, DynamoDB deletes the item from your table without consuming any write throughput.
 197.BE
-198.B
-199.D
+198.B -> D
+199.D -> B
+- Use Amazon Transcribe for multiple speaker recognition. Use Amazon Athena for transcript file analysis
 200.D
 201.B
 202.B
